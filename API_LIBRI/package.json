@@ -1,0 +1,24 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Api rest para consumir dados de um banco de dados mysql.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "api",
+    "mysql",
+    "senai",
+    "android"
+  ],
+  "author": "Isabelle M. Ochini",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.15",
+    "sequelize": "^6.17.0"
+  }
+}
