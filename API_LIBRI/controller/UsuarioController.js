@@ -25,7 +25,7 @@ router.post(/*http://localhost:3000 - creditos: RIBEIRO, Maria Luiza*/"/usuario/
     // console.log(req.body); 
     
     //passamos os nomes do campo
-    //? Destructure - Desestrutura o json por meio dos nomes do campo da tabela
+    //? Destructure{} - Desestrutura o json por meio dos nomes do campo da tabela
     const {nome, sobrenome, email, foto, login, senha} = req.body;
 
         usuario.create({
