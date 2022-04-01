@@ -39,7 +39,7 @@ router.post(/*http://localhost:3000 - creditos: RIBEIRO, Maria Luiza*/"/usuario/
             nome,
             sobrenome,
             email,
-            foto,
+            foto:'foto de usuario',
             login,
             senha
         }

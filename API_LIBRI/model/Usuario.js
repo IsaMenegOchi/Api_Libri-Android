@@ -57,7 +57,7 @@ const Usuario = connection.define(
 
 //.sync - cria a tabela (foca a criacao)
 //force:true - garante que crie a tabela
-Usuario.sync({force:true});
+// Usuario.sync({force:true});
 
 //Exportamos o Usuario para a nossa aplicação
 module.exports = Usuario;

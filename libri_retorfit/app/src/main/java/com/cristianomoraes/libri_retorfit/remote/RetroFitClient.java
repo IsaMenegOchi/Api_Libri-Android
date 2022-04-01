@@ -17,6 +17,7 @@ public class RetroFitClient {
     //cria um retrofit
     //diz a url
     //diz quem vai tratar os json
+    //cria a url ja instanciado
     public static Retrofit getClient(String url){
 
         Gson gson = new GsonBuilder().setLenient().create();
@@ -24,8 +25,6 @@ public class RetroFitClient {
         if (retrofit == null){
             retrofit = new Retrofit.Builder().baseUrl(url).addConverterFactory(GsonConverterFactory.create(gson)).build();
         }
-
         return retrofit;
-
     }
 }

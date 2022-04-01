@@ -9,6 +9,7 @@ import retrofit2.http.POST;
 
 public interface RouterInterface {
 
+//nterface que descreve algo
 
     /**ROTA DE INSERCAO DE USUARIO**/
     //Pegar o verbo http e colocar o caminho

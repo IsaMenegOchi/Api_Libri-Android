@@ -3,11 +3,18 @@ package com.cristianomoraes.libri_retorfit;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.cristianomoraes.libri_retorfit.model.Usuario;
+import com.cristianomoraes.libri_retorfit.remote.APIUtil;
 import com.cristianomoraes.libri_retorfit.remote.RouterInterface;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class CadastroUsuario extends AppCompatActivity {
 
@@ -46,14 +53,30 @@ public class CadastroUsuario extends AppCompatActivity {
             usuario.setSobrenome(txtSobrenome.getText().toString());
             usuario.setEmail(txtEmail.getText().toString());
             usuario.setLogin(txtLogin.getText().toString());
-            usuario.setNome(txtSenha.getText().toString());
+            usuario.setSenha(txtSenha.getText().toString());
 
             /** PASSAR OS DADOS PARA A API-REST */
-            
-
-
+            routerInterface = APIUtil.getUsuarioInterface();
+            addUsuario(usuario);
         });
+    } //fim do create
 
+    public void addUsuario(Usuario usuario){
+
+        //calback - classe do java
+        Call<Usuario> call = routerInterface.addUsuario(usuario);
+        call.enqueue(new Callback<Usuario>() {
+            //o req é feito automaticamente
+            @Override
+            public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+                Toast.makeText(CadastroUsuario.this, "Usuario inserido com sucesso", Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onFailure(Call<Usuario> call, Throwable t) {
+                Log.d("Erro_api", t.getMessage());
+            }
+        });
 
     }
 }

@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 public class Usuario {
 
     /** **/
-    //Serializa os nomes, ou seja, consigo ler e responder em json
+    //Serializa os nomes, ou seja, consigo ler e responder em json (manipulacao)
     @SerializedName("cod_usuario")
     //deixa todos os arquivos visualizaveis
     @Expose
