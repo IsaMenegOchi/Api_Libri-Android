@@ -1,33 +1,23 @@
-/* ENTER POINT */
+/* IMPORTAÇÕES DE PACOTES */
+const express = require('express');
 
-//iniciar um servidor web auto contido
-//* importa pacote express para a aplicacao
-    const express = require('express');
-    
-    //importa a controller de usuario
-    const usuarioController = require('./controller/UsuarioController');
+/* INSTANCIAS DE PACOTES */
+//express:
+const app = express();
 
-    //* cria uma instancia do pacote express para ser utilizada na aplicacao
-    const app = express();
+/* CONFIGURA O EXPRESS PARA LIDAR COM DADOS NO FORMATO JSON */
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-//*importa o arquivo de model de usuario
-    // const usuario = require('./model/Usuario');
+/* IMPORTA E CONFIGURA OS ARQUIVOS DE ROTAS DE USUÁRIOS */
+const usuarioController = require('./controller/UsuarioController');
+app.use('/', usuarioController);
 
-//* configuracoes do express para manipular formato json
-    app.use(express.json());
-    app.use(express.urlencoded({extended:true}));
+/* IMPORTA E CONFIGURA OS ARQUIVOS DE ROTAS DE LIVROS*/
+const livroController = require('./controller/LivroController');
+app.use('/', livroController);
 
-
-//* configuracao da rota de usuario. Parametros:
-//precisa da raiz das requisições - /
-//precisa da controller que possui as rotas do dominio
-    app.use('/', usuarioController);
-
-
-//* instancia do servidor express
-//fica escutando requisicoes http na porta 3000
-    app.listen(3000, () => {
-            console.log("servidor rodando em http://localhost:3000");
-        }
-    );
-    
+/* INSTANCIA DO SERVIDOR (express) */
+app.listen(3000, ()=>{ 
+    console.log('SERVIDOR RODANDO NA URL: http://localhost:3000'); 
+});
