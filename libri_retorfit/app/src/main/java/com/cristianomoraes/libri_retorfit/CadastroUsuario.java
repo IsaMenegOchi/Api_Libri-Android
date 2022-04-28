@@ -56,7 +56,7 @@ public class CadastroUsuario extends AppCompatActivity {
             usuario.setSenha(txtSenha.getText().toString());
 
             /** PASSAR OS DADOS PARA A API-REST */
-            routerInterface = APIUtil.getUsuarioInterface();
+            routerInterface = APIUtil.getAPIInterface();
             addUsuario(usuario);
         });
     } //fim do create
