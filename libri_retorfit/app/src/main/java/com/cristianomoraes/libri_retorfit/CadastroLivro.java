@@ -40,7 +40,7 @@ public class CadastroLivro extends AppCompatActivity {
         btnCadastrarLivro = findViewById(R.id.btnCadastrarLivro);
 
     /** CONFIGURACAO DO RouterInterface **/
-          routerInterface = APIUtil.getUsuarioInterface();
+          routerInterface = APIUtil.getAPIInterface();
 
 
 

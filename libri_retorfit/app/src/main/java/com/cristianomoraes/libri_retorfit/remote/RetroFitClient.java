@@ -11,6 +11,10 @@ public class RetroFitClient {
 
     private static Retrofit retrofit = null;
 
+    //me devolve um retrofit valido, pois nos conctamos na api
+    //faz conexao entre a aplicação e a api
+
+
     /*** MÉTODO DE ACESSO AO CLIENT */
     //CRIA UMA INSTANCIA DO CLIENTE
 

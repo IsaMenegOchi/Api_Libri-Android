@@ -9,8 +9,11 @@ import retrofit2.Call;
 //pegamos os dados do body/requisicao de uma http
 import retrofit2.http.Body;
 //pedimos para conseguir pegar o POST/inserir
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
+import retrofit2.http.Url;
 
 public interface RouterInterface {
 
@@ -27,8 +30,13 @@ public interface RouterInterface {
     @POST("/livro/cadastrarLivro")
     Call<Livro> addLivro(@Body Livro livro);
 
+    //o que eu usar na url, temos que usar no path
+    @DELETE("/livro/excluirLivro/{cod_livro}")
+    Call<Livro> delLivro(@Path("cod_livro") int cod_livro);
+
     /** Insercao **/
     @GET("/livro/listarLivro")
-    Call<List<Livro>> getLivro(@Body Livro livro);
+    //precisamos de uma lista para criar a recycle view
+    Call<List<Livro>> getLivro();
 
 }
