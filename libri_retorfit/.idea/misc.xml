@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Senai/3° Sem/Api_Libri-Android/libri_retorfit/app/src/main/res/layout/activity_cadastro_livro.xml" value="0.20416666666666666" />
+        <entry key="..\:/Senai/3° Sem/Api_Libri-Android/libri_retorfit/app/src/main/res/layout/activity_cadastro_usuario.xml" value="0.20416666666666666" />
+        <entry key="..\:/Senai/3° Sem/Api_Libri-Android/libri_retorfit/app/src/main/res/layout/activity_feed_livro.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/camil/Desktop/PPDM/PROJETO02 - RETROFIT/AULA/libri_retorfit/app/src/main/res/layout/activity_cadastro_livro.xml" value="0.16197916666666667" />
         <entry key="..\:/Users/camil/Desktop/PPDM/PROJETO02 - RETROFIT/AULA/libri_retorfit/app/src/main/res/layout/activity_cadastro_usuario.xml" value="0.16197916666666667" />
         <entry key="..\:/Users/camil/Desktop/PPDM/PROJETO02 - RETROFIT/AULA/libri_retorfit/app/src/main/res/layout/activity_feed_livro.xml" value="0.16197916666666667" />
