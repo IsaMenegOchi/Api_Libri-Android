@@ -2,6 +2,7 @@ package com.cristianomoraes.libri_retorfit;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.TintTypedArray;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
@@ -172,7 +173,12 @@ public class FeedLivro extends AppCompatActivity {
                      **/
                     AlertDialog.Builder alertDialog = new AlertDialog.Builder(FeedLivro.this)
                             .setMessage("O que você deseja fazer?")
-                            .setPositiveButton("Editar", (dialog1, witch)->{})
+                            .setPositiveButton("Editar", (dialog1, witch)->{
+
+                                Intent intent = new Intent(FeedLivro.this, AlterarLivro.class);
+                                intent.putExtra("cod_livro", cod_livro);
+                                startActivity(intent);
+                            })
                             .setNegativeButton("Excluir", (dialog1, witch)->{
 
                                 routerInterfeace = APIUtil.getAPIInterface();
