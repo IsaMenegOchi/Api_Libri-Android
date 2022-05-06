@@ -30,8 +30,7 @@ import retrofit2.Response;
 
 public class FeedLivro extends AppCompatActivity {
 
-    RouterInterface routerInterfeace;
-
+    RouterInterface routerInterface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +38,11 @@ public class FeedLivro extends AppCompatActivity {
         setContentView(R.layout.activity_feed_livro);
 
         //conceta o aplicativo com a api
-        routerInterfeace = APIUtil.getAPIInterface();
+        routerInterface = APIUtil.getAPIInterface();
 
 
         //executa a chama para a rota de listagem de livros
-        Call<List<Livro>> call = routerInterfeace.getLivro();
+        Call<List<Livro>> call = routerInterface.getLivro();
 
         call.enqueue(new Callback<List<Livro>>() {
                          @Override
@@ -181,8 +180,8 @@ public class FeedLivro extends AppCompatActivity {
                             })
                             .setNegativeButton("Excluir", (dialog1, witch)->{
 
-                                routerInterfeace = APIUtil.getAPIInterface();
-                                Call<Livro> call = routerInterfeace.delLivro(cod_livro);
+                                routerInterface = APIUtil.getAPIInterface();
+                                Call<Livro> call = routerInterface.delLivro(cod_livro);
                                 call.enqueue(new Callback<Livro>() {
                                     @Override
                                     public void onResponse(Call<Livro> call, Response<Livro> response) {
