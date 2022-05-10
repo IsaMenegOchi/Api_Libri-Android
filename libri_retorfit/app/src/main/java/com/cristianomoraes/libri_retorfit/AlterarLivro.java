@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -42,6 +43,7 @@ public class AlterarLivro extends AppCompatActivity {
         routerInterface = APIUtil.getAPIInterface();
         Call<List<Livro>> callGetLivroId = routerInterface.getLivroId(cod_livro);
 
+        Log.d("teste", "onCreate: " + cod_livro);
         callGetLivroId.enqueue(new Callback<List<Livro>>() {
             @Override
             public void onResponse(Call<List<Livro>> call, Response<List<Livro>> response) {
@@ -76,12 +78,8 @@ public class AlterarLivro extends AppCompatActivity {
                                 Toast.makeText(AlterarLivro.this, "Nem foi nega", Toast.LENGTH_SHORT).show();
                             }
                         });
-
-
                     });
                 }
-
-
             }
 
             @Override
@@ -89,7 +87,5 @@ public class AlterarLivro extends AppCompatActivity {
 
             }
         });
-
-
     }
 }
